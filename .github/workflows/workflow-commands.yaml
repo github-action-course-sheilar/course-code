@@ -21,4 +21,4 @@ jobs:
          - name: Masks
            run: echo "::add-masks::Secret String"
          - name: Echo a secret 
-           run: echo "Secret String"
+           run: echo "apple"

@@ -17,8 +17,8 @@ jobs:
         steps:
             - name: Display Working Directory & List Files
               run: | 
-                pwd
-                ls -a
-                echo $GIHUB_SHA
-                echo $GIHUB_REPOSITORY
-                echo $GITHUB_WORKSPACE
+                Get-Location
+                dir
+                echo $env:GIHUB_SHA
+                echo $env:GIHUB_REPOSITORY
+                echo $env:GITHUB_WORKSPACE

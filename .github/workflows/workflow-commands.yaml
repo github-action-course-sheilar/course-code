@@ -18,3 +18,7 @@ jobs:
             echo "::group:: Group Logs"
             echo "group inside"
             echo "::endgroup::"
+         - name: Masks
+           run: echo "::add-masks::Secret String"
+         - name: Echo a secret 
+           run: echo "Secret String"

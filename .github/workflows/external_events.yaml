@@ -6,4 +6,4 @@ jobs:
     echo-string:
         runs-on: ubuntu-latests
         steps:
-            - run: echo "Client Payload: ${{ github.event.client_payload.env }}"
+            - run: echo ${{ github.event.client_payload.env }}

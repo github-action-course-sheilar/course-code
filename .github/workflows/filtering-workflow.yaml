@@ -1,0 +1,10 @@
+name: Filter Workflow
+on: 
+    push: 
+        branches: 
+            - feature/*
+jobs:
+    echo-string:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "I was trigged because you push code changes in feature/* branch."

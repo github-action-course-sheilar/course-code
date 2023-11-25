@@ -1,0 +1,22 @@
+name: Status Check Functions
+on: pull_request
+jobs:
+    job_1: 
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "Job 1 is started"
+            - run: sleep 20
+            - if: failure()
+              run: echo "Run on failed"
+            - if: always()
+              run: echo "Job 1:Run on always"
+            - if: cancelled()
+              run: echo "Run on cancelled"
+
+    job_2:
+        runs-on: ubuntu-latest
+        needs: job_1
+        steps:
+            - run: echo "Job 2 is started"
+            - if: always()
+              run: echo "Job 2:Always on run"

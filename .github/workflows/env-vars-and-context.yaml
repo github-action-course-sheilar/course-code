@@ -16,6 +16,8 @@ jobs:
               run: |
                 echo 'WF_LEVEL_VAR: ${{ env.WF_LEVEL_VAR }}'
                 echo 'JOB_LEVEL_VAR: ${{ env.JOB_LEVEL_VAR }}'
+            - name: Set var
+              run: echo '$NEW_ENV_VAR=$(date)' >> '$GITHUB_ENV'
             - name: log custom env vars (overriden)
               env:
                 STEP_LEVEL_VAR: Available to step - overriden
@@ -24,5 +26,6 @@ jobs:
                 echo 'WF_LEVEL_VAR: ${{ env.WF_LEVEL_VAR }}'
                 echo 'JOB_LEVEL_VAR: ${{ env.JOB_LEVEL_VAR }}'
                 echo 'STEP_LEVEL_VAR: ${{ env.STEP_LEVEL_VAR }}'
+                echo 'NEW_ENV_VAR: $NEW_ENV_VAR
 
              

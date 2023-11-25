@@ -1,11 +1,28 @@
 name: Environment Vars & Context
 on: [push, pull_request] 
+env:
+    WF_LEVEL_VAR: Available to all jobs
 jobs:
     env-var-and-context:
         runs-on: ubuntu-latest
+        env: 
+            JOB_LEVEL_VAR: Available to all steps in env-var-and-context
         steps:
-            - name: Environment Var
+            - name: log environment var
               run: echo $GIHUB_REF
-            - name: Context Var
+            - name: log context var
               run: echo '${{ github.ref }}'
+            - name: log custom env vars (original)
+              run: |
+                echo 'WF_LEVEL_VAR: ${{ env.WF_LEVEL_VAR }}'
+                echo 'JOB_LEVEL_VAR: ${{ env.JOB_LEVEL_VAR }}'
+            - name: log custom env vars (overriden)
+              env:
+                STEP_LEVEL_VAR: Available to step - overriden
+                WF_LEVEL_VAR: Overriden in step
+            run: |
+                echo 'WF_LEVEL_VAR: ${{ env.WF_LEVEL_VAR }}'
+                echo 'JOB_LEVEL_VAR: ${{ env.JOB_LEVEL_VAR }}'
+                echo 'STEP_LEVEL_VAR: ${{ env.STEP_LEVEL_VAR }}'
+
              

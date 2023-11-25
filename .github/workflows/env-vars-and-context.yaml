@@ -20,7 +20,7 @@ jobs:
               env:
                 STEP_LEVEL_VAR: Available to step - overriden
                 WF_LEVEL_VAR: Overriden in step
-            run: |
+              run: |
                 echo 'WF_LEVEL_VAR: ${{ env.WF_LEVEL_VAR }}'
                 echo 'JOB_LEVEL_VAR: ${{ env.JOB_LEVEL_VAR }}'
                 echo 'STEP_LEVEL_VAR: ${{ env.STEP_LEVEL_VAR }}'

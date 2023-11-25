@@ -1,5 +1,5 @@
 name: Environment Vars & Context
-on: push 
+on: [push, pull_request] 
 jobs:
     env-var-and-context:
         runs-on: ubuntu-latest

@@ -21,7 +21,6 @@ jobs:
     job_2:
         runs-on: ubuntu-latest
         needs: job_1
+        if: failure()
         steps:
-            - run: echo "Job 2 is started"
-            - if: always()
-              run: echo "Job 2:Always on run"
+            - run: echo 'Job 2'

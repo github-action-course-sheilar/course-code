@@ -6,6 +6,12 @@ on:
                 description: "Date Value"
                 value: ${{ jobs.generate-output.outputs.date }}
 jobs:
+    nested-workflow-call: 
+        uses: github-action-course-sheilar/workflows/.github/workflows/reusable.yaml@main
+        with: 
+            name: "June"
+        secrets:
+            access-token: ${{ secrets.ACCESS_TOKEN }}
     generate-output:
         runs-on: ubuntu-latest
         outputs:

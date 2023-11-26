@@ -16,6 +16,7 @@ jobs:
             access-token: ${{ secrets.ACCESS_TOKEN }}
     calling-a-reuable-workflow-in-the-same-repo:
         uses: ./.github/workflows/reusable-workflow.yaml
+        secrets: inherit
     using-reusable-workflow-outputs:
         runs-on: ubuntu-latest
         needs: calling-a-reuable-workflow-in-the-same-repo

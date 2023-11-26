@@ -5,7 +5,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Step 1
-              run: sleep 20
+              run: sleep 90
+              timeout-minutes: 1
             - name: Step 2
               continue-on-error: true
               run: exit 1

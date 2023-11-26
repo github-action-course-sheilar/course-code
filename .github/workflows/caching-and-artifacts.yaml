@@ -29,6 +29,7 @@ jobs:
                 retention-days: 10
             - name: Download Code Coverage
               uses: actions/download-artifact@v3
+              if: always()
               with:
                   name: code-coverage
                   path: code-coverage-report

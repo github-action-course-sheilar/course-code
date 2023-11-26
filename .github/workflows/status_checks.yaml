@@ -7,6 +7,7 @@ jobs:
             - name: Step 1
               run: sleep 20
             - name: Step 2
+              continue-on-error: true
               run: exit 1
             - name: Run on step 2 failure
               if: failure()
